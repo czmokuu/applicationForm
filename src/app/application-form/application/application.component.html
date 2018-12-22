@@ -1,0 +1,19 @@
+<div class="section">
+  <h1 class="title is-1">
+    apply for the position of purchasing assistant
+  </h1>
+  <form [formGroup]="createApplicationService.form">
+    <div class="columns">
+      <div class="column">
+        <label class="label">Personal details*</label>
+          <app-input [form]="createApplicationService" [name]="'name'"></app-input>
+          <app-input [form]="createApplicationService" [name]="'surname'"></app-input>
+          <app-input [form]="createApplicationService" [name]="'email'"></app-input> 
+          <app-data-picker [form]="createApplicationService" [name]="'dateOfBirth'"></app-data-picker>
+      </div>
+      <div class="column">
+          <!-- <app-input [form]="createApplicationService" [name]="'name'"></app-input> -->
+      </div>
+    </div>
+  </form>
+</div>
