@@ -1,0 +1,12 @@
+
+<form class="item-wrapper" [formGroup]="form.form">
+    <label>{{field.label}}</label>
+    <div class="validation" >
+        <img src="../../../../assets/right.png" *ngIf="isFieldValid()">
+        <input type="file" (change)="fileChange($event)" [formControlName]="field.name"  class="input" accept=".pdf,.doc,.docx">
+        <ng-container *ngFor="let validation of field.validations;">
+                <div class="error-message" *ngIf="form.form.get(field.name).hasError(validation.name) && form.form.get(field.name).touched">{{validation.message}}</div>
+        </ng-container>
+    </div>
+   
+</form>

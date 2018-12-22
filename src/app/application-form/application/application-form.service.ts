@@ -21,6 +21,10 @@ export class CreateApplicationForm extends FormConfig {
         this.fieldsConfig.set('street', new FieldConfig('', 'street', '', false, [requiredValidator]));
         this.fieldsConfig.set('postCode', new FieldConfig('', 'postCode', '', false, [requiredValidator]));
 
+        this.fieldsConfig.set('resume', new FieldConfig('', 'resume', '', false, [requiredValidator]));
+        this.fieldsConfig.set('cv', new FieldConfig('', 'cv', '', false, [requiredValidator]));
+        this.fieldsConfig.set('portfolio', new FieldConfig('', 'portfolio', '', false, [requiredValidator]));
+
         this.form = this.fb.group(
             this.initForm()
         )

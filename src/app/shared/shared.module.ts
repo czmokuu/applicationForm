@@ -9,6 +9,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { DataPickerComponent } from './components/data-picker/data-picker.component';
 import { RadiobuttonsComponent } from './components/radiobuttons/radiobuttons.component';
 import { MyDatePickerModule } from 'mydatepicker';
+import { FileChooserComponent } from './components/file-chooser/file-chooser.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -16,7 +17,7 @@ import { MyDatePickerModule } from 'mydatepicker';
     MyDatePickerModule,
     FormsModule,
   ],
-  declarations: [NavbarComponent, FooterComponent, BanerComponent, HeaderComponent, InputComponent, DataPickerComponent, RadiobuttonsComponent],
-  exports: [NavbarComponent, FooterComponent, BanerComponent, HeaderComponent, InputComponent,DataPickerComponent]
+  declarations: [NavbarComponent, FooterComponent, BanerComponent, HeaderComponent, InputComponent, DataPickerComponent, RadiobuttonsComponent, FileChooserComponent],
+  exports: [NavbarComponent, FooterComponent, BanerComponent, HeaderComponent, InputComponent,DataPickerComponent,FileChooserComponent]
 })
 export class SharedModule { }
