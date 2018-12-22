@@ -10,6 +10,7 @@ import { DataPickerComponent } from './components/data-picker/data-picker.compon
 import { RadiobuttonsComponent } from './components/radiobuttons/radiobuttons.component';
 import { MyDatePickerModule } from 'mydatepicker';
 import { FileChooserComponent } from './components/file-chooser/file-chooser.component';
+import { TextareaComponent } from './components/textarea/textarea.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +18,7 @@ import { FileChooserComponent } from './components/file-chooser/file-chooser.com
     MyDatePickerModule,
     FormsModule,
   ],
-  declarations: [NavbarComponent, FooterComponent, BanerComponent, HeaderComponent, InputComponent, DataPickerComponent, RadiobuttonsComponent, FileChooserComponent],
-  exports: [NavbarComponent, FooterComponent, BanerComponent, HeaderComponent, InputComponent,DataPickerComponent,FileChooserComponent]
+  declarations: [NavbarComponent, FooterComponent, BanerComponent, HeaderComponent, InputComponent, DataPickerComponent, RadiobuttonsComponent, FileChooserComponent, TextareaComponent],
+  exports: [NavbarComponent, FooterComponent, BanerComponent, HeaderComponent, InputComponent,DataPickerComponent,FileChooserComponent,TextareaComponent]
 })
 export class SharedModule { }

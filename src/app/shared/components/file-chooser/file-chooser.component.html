@@ -1,12 +1,14 @@
-
 <form class="item-wrapper" [formGroup]="form.form">
-    <label>{{field.label}}</label>
-    <div class="validation" >
-        <img src="../../../../assets/right.png" *ngIf="isFieldValid()">
-        <input type="file" (change)="fileChange($event)" [formControlName]="field.name"  class="input" accept=".pdf,.doc,.docx">
-        <ng-container *ngFor="let validation of field.validations;">
-                <div class="error-message" *ngIf="form.form.get(field.name).hasError(validation.name) && form.form.get(field.name).touched">{{validation.message}}</div>
-        </ng-container>
+  <div class="columns">
+    <div class="column is-half validation">
+        <label>{{field.label}}</label><img src="../../../../assets/right.png" *ngIf="isFieldValid()">
+      <ng-container *ngFor="let validation of field.validations;">
+        <div class="error-message" *ngIf="form.form.get(field.name).hasError(validation.name) && form.form.get(field.name).touched">{{validation.message}}</div>
+      </ng-container>
     </div>
-   
+    <div class="upload-btn-wrapper">
+        <button class="btn">Upload</button>
+        <input type="file" (change)="fileChange($event)" [formControlName]="field.name" class="input" accept=".pdf,.doc,.docx">
+    </div>
+  </div>
 </form>

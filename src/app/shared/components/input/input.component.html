@@ -2,9 +2,11 @@
     <label>{{field.label}}</label>
     <div class="validation" >
         <img src="../../../../assets/right.png" *ngIf="isFieldValid()">
-        <input [formControlName]="field.name" [type]="field.inputType" class="input" [(ngModel)]="field.value">
+        <input [formControlName]="field.name" [type]="field.inputType" class="input" [(ngModel)]="field.value" [placeholder]="field.placeholder">
         <ng-container *ngFor="let validation of field.validations;">
-                <div class="error-message" *ngIf="form.form.get(field.name).hasError(validation.name) && form.form.get(field.name).touched">{{validation.message}}</div>
+                <div class="error-message" *ngIf="form.form.get(field.name).hasError(validation.name) && form.form.get(field.name).touched">
+                    <div class="single-message">{{validation.message}}</div>
+                </div>
         </ng-container>
     </div>
    

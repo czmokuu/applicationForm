@@ -7,7 +7,8 @@ export class FieldConfig {
     readonly name: string,
     public value: any,
     public disabled: boolean,
-    public validations: CustomValidator[]
+    public validations: CustomValidator[],
+    readonly placeholder: string
   ) {
   }
 

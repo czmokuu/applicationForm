@@ -50,11 +50,14 @@ strong{
         color: red;
         text-align: left;
         position: absolute;
+        .single-message {
+            margin-bottom: 15px;
+        }
     }
 }
 .item-wrapper{
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 
 }
 

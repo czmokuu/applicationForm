@@ -7,3 +7,9 @@ export const requiredValidator: CustomValidator = {
     validator: Validators.required,
     message: 'Field required'
 }
+
+export const emailValidator: CustomValidator = {
+    name: 'email',
+    validator: Validators.email,
+    message: 'You have to provide correct e-mail address.'
+}
