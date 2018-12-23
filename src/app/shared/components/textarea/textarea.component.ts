@@ -15,11 +15,4 @@ export class TextareaComponent implements OnInit {
   ngOnInit(): void {
     this.field = this.form.getFieldConfig(this.name);
   }
-
-  isFieldValid(): boolean {
-    let field = this.form ? this.form.form.get(this.name) : null;
-
-    let isValid = field ? !field.invalid && field.dirty : false;
-    return isValid;
-  }
 }

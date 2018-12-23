@@ -1,10 +1,10 @@
 <form class="item-wrapper" [formGroup]="form.form">
   <div class="columns">
     <div class="column is-half validation">
-        <label>{{field.label}}</label><img src="../../../../assets/right.png" *ngIf="isFieldValid()">
-      <ng-container *ngFor="let validation of field.validations;">
-        <div class="error-message" *ngIf="form.form.get(field.name).hasError(validation.name) && form.form.get(field.name).touched">{{validation.message}}</div>
-      </ng-container>
+        <label>{{field.label}}</label><img src="../../../../assets/right.png" *ngIf="form.isFieldValid(name)">
+        <div class="error-message">
+            <div class="single-message">{{form.getErrorMessage(field)}}</div>
+        </div>
     </div>
     <div class="upload-btn-wrapper">
         <button class="btn">Upload</button>

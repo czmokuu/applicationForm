@@ -17,12 +17,6 @@ export class FileChooserComponent implements OnInit {
     this.field = this.form.getFieldConfig(this.name);
   }
 
-  isFieldValid(): boolean {
-    let field = this.form ? this.form.form.get(this.name) : null;
-
-    let isValid = field ? !field.invalid && field.dirty : false;
-    return isValid;
-  }
 
   fileChange(event) {
     let fileList: FileList = event.target.files;

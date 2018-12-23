@@ -1,13 +1,11 @@
 <form class="item-wrapper" [formGroup]="form.form">
     <label>{{field.label}}</label>
-    <div class="validation" >
-        <img src="../../../../assets/right.png" *ngIf="isFieldValid()">
-        <input [formControlName]="field.name" [type]="field.inputType" class="input" [(ngModel)]="field.value" [placeholder]="field.placeholder">
-        <ng-container *ngFor="let validation of field.validations;">
-                <div class="error-message" *ngIf="form.form.get(field.name).hasError(validation.name) && form.form.get(field.name).touched">
-                    <div class="single-message">{{validation.message}}</div>
-                </div>
-        </ng-container>
+    <div class="validation" *ngIf="field">
+        <img src="../../../../assets/right.png" *ngIf="form.isFieldValid(name)">
+        <input [formControlName]="field.name" [type]="field.inputType" class="input" [(ngModel)]="field.value"
+            [placeholder]="field.placeholder">
+        <div class="error-message">
+            <div class="single-message">{{form.getErrorMessage(field)}}</div>
+        </div>
     </div>
-   
 </form>

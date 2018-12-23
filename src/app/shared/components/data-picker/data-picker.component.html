@@ -1,9 +1,9 @@
 <form class="item-wrapper" [formGroup]="form.form">
   <div class="validation">
-      <img src="../../../../assets/right.png" *ngIf="isFieldValid()">
+      <img src="../../../../assets/right.png" *ngIf="form.isFieldValid(name)">
     <my-date-picker [formControlName]="field.name" [options]="options" [(ngModel)]="field.value" [placeholder]="field.placeholder"></my-date-picker>
-    <ng-container *ngFor="let validation of field.validations;">
-      <div class="error-message" *ngIf="form.form.get(field.name).hasError(validation.name) && form.form.get(field.name).touched">{{validation.message}}</div>
-    </ng-container>
+    <div class="error-message">
+        <div class="single-message">{{form.getErrorMessage(field)}}</div>
+    </div>
   </div>
 </form>

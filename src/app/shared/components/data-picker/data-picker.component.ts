@@ -16,20 +16,11 @@ export class DataPickerComponent {
   options: IMyDpOptions;
   constructor() {
     this.options = {
-      dateFormat: 'dd.mm.yyyy',
+      dateFormat: 'dd-mm-yyyy',
     };
   }
 
   ngOnInit(): void {
     this.field = this.form.getFieldConfig(this.name);
   }
-
-  isFieldValid(): boolean {
-    let field = this.form ? this.form.form.get(this.name) : null;
-
-    let isValid = field ? !field.invalid && field.dirty : false;
-    return isValid;
-  }
-
-
 }

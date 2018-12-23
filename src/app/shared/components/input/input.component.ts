@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormConfig } from '../../../application-form/form-configuration/form-config';
 import { FieldConfig } from '../../../application-form/form-configuration/field-config';
+import { CustomValidator } from '../../../application-form/form-configuration/validators';
 
 @Component({
   selector: 'app-input',
@@ -15,12 +16,4 @@ export class InputComponent implements OnInit {
   ngOnInit(): void {
     this.field = this.form.getFieldConfig(this.name);
   }
-
-  isFieldValid(): boolean {
-    let field = this.form ? this.form.form.get(this.name) : null;
-
-    let isValid = field ? !field.invalid && field.dirty : false;
-    return isValid;
-  }
-
 }
