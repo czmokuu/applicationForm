@@ -18,13 +18,13 @@ export class CreateApplicationForm extends FormConfig {
         this.fieldsConfig.set('name', new FieldConfig('', 'name', '', false, [requiredValidator], "Name"));
         this.fieldsConfig.set('surname', new FieldConfig('', 'surname', '', false, [requiredValidator], "Surname"));
         this.fieldsConfig.set('email', new FieldConfig('', 'email', '', false, [requiredValidator, emailValidator], "e-mail"));
-        this.fieldsConfig.set('sex', new FieldConfig('', 'sex', '', false, [requiredValidator], "sex"));
+        this.fieldsConfig.set('sex', new FieldConfig('', 'sex', '', false, [], "sex"));
         this.fieldsConfig.set('dateOfBirth', new FieldConfig('', 'dateOfBirth', '', false, [requiredValidator], "Date of birth"));
 
         this.fieldsConfig.set('country', new FieldConfig('', 'country', '', false, [requiredValidator], "Country"));
         this.fieldsConfig.set('street', new FieldConfig('', 'street', '', false, [requiredValidator], "Street"));
-        this.fieldsConfig.set('postCode', new FieldConfig('', 'postCode', '', false, 
-                                [requiredValidator,ValidatorsConfigurable.regexValidator(this.postCodeRegexPatter)], "Post code"));
+        this.fieldsConfig.set('postCode', new FieldConfig('', 'postCode', '', false,
+            [requiredValidator, ValidatorsConfigurable.regexValidator(this.postCodeRegexPatter)], "Post code"));
 
         this.fieldsConfig.set('motivation', new FieldConfig('', 'motivation', '', false, [requiredValidator], ""));
         this.fieldsConfig.set('resume', new FieldConfig('Resume: ', 'resume', '', false, [requiredValidator], ""));
@@ -36,7 +36,7 @@ export class CreateApplicationForm extends FormConfig {
         )
     }
 
-    isFieldValid(name:string): boolean {
+    isFieldValid(name: string): boolean {
         let field = this.form ? this.form.get(name) : null;
 
         let isValid = field ? !field.invalid && field.dirty : false;
@@ -55,6 +55,7 @@ export class CreateApplicationForm extends FormConfig {
     }
 
     constructErrorMessage(validator: CustomValidator, filedName: string, ) {
+        debugger
         return this.ifShowErrors(filedName, validator) ? validator.message : '';
     }
 

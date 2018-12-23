@@ -10,12 +10,13 @@
         <app-input [form]="createApplicationService" [name]="'surname'"></app-input>
         <app-input [form]="createApplicationService" [name]="'email'"></app-input>
         <app-data-picker [form]="createApplicationService" [name]="'dateOfBirth'"></app-data-picker>
+        <app-radiobuttons [form]="createApplicationService" [name]="'sex'" [options]="sexOptions"></app-radiobuttons>
       </div>
       <div class="column">
-          <label class="label">Details of the place of residence *</label>
-          <app-input [form]="createApplicationService" [name]="'country'"></app-input>
-          <app-input [form]="createApplicationService" [name]="'street'"></app-input>
-          <app-input [form]="createApplicationService" [name]="'postCode'"></app-input>
+        <label class="label">Details of the place of residence *</label>
+        <app-input [form]="createApplicationService" [name]="'country'"></app-input>
+        <app-input [form]="createApplicationService" [name]="'street'"></app-input>
+        <app-input [form]="createApplicationService" [name]="'postCode'"></app-input>
       </div>
     </div>
     <div class="columns">

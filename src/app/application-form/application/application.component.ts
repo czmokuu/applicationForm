@@ -8,6 +8,7 @@ import { CreateApplicationForm } from './application-form.service';
 })
 export class ApplicationComponent implements OnInit {
 
+  sexOptions = ['male','female'];
   constructor(private createApplicationService: CreateApplicationForm) {
 
   }

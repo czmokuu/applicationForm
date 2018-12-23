@@ -16,13 +16,12 @@ export const emailValidator: CustomValidator = {
 
 
 export class ValidatorsConfigurable {
-    a = '/^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/i';
 
-    static regexValidator(regexp: RegExp) {
+    static regexValidator(regexp: RegExp | string) {
         let validatorWithPatter: CustomValidator = {
-            name: 'email',
+            name: 'pattern',
             validator: Validators.pattern(regexp),
-            message: 'You have to provide correct e-mail address.'
+            message: 'You have to provide correct dutch zipcode (e.g  1234 ab)'
         }
 
         return validatorWithPatter;

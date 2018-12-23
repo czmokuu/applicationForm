@@ -5,7 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BanerComponent } from './baner/baner.component';
 import { HeaderComponent } from './header/header.component';
 import { InputComponent } from './components/input/input.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataPickerComponent } from './components/data-picker/data-picker.component';
 import { RadiobuttonsComponent } from './components/radiobuttons/radiobuttons.component';
 import { MyDatePickerModule } from 'mydatepicker';
@@ -18,7 +18,24 @@ import { TextareaComponent } from './components/textarea/textarea.component';
     MyDatePickerModule,
     FormsModule,
   ],
-  declarations: [NavbarComponent, FooterComponent, BanerComponent, HeaderComponent, InputComponent, DataPickerComponent, RadiobuttonsComponent, FileChooserComponent, TextareaComponent],
-  exports: [NavbarComponent, FooterComponent, BanerComponent, HeaderComponent, InputComponent,DataPickerComponent,FileChooserComponent,TextareaComponent]
+  declarations: [NavbarComponent,
+    FooterComponent,
+    BanerComponent,
+    HeaderComponent,
+    InputComponent,
+    DataPickerComponent,
+    RadiobuttonsComponent,
+    FileChooserComponent,
+    TextareaComponent],
+    
+  exports: [NavbarComponent,
+    FooterComponent,
+    BanerComponent,
+    HeaderComponent,
+    InputComponent,
+    DataPickerComponent,
+    FileChooserComponent,
+    TextareaComponent,
+    RadiobuttonsComponent]
 })
 export class SharedModule { }

@@ -1,3 +1,9 @@
-<p>
-  radiobuttons works!
-</p>
+<form class="item-wrapper" [formGroup]="form.form">
+  <div class="columns">
+    <div class="control" *ngFor="let option of options">
+      <label class="radio">
+        <input [formControlName]="field.name" name="{{field.name}}" type="radio" [value]="option" [(ngModel)]="field.value">
+        {{option}}</label>
+    </div>
+  </div>
+</form>
