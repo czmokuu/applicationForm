@@ -22,7 +22,7 @@ export class ApplicationComponent  {
   apply() {
     let applicationForm = this.createApplicationService.createApplicationFormDto();
     this.applicationResource.apply(applicationForm).subscribe(() => {
-      this.notificationService.sendSuccess(`Success! Your application has been send.`);
+      this.notificationService.sendSuccess(`Success! Your application has been sent.`);
     })
   }
 
