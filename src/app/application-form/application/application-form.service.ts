@@ -3,7 +3,6 @@ import { FormConfig } from "../form-configuration/form-config";
 import { FieldConfig } from "../form-configuration/field-config";
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { requiredValidator, emailValidator, ValidatorsConfigurable } from "../validators/validators";
-import { ApplicationDto } from "./application-dto";
 import { CustomValidator } from "../form-configuration/validators";
 import { ApplicationFormDto } from "../application-form-dto";
 
@@ -80,14 +79,6 @@ export class CreateApplicationForm extends FormConfig {
         isAllDay ? field.setValidators([]) : field.setValidators(fieldConfig.validators);
         field.updateValueAndValidity();
         fieldConfig.disabled = isAllDay;
-    }
-
-    createApplication(): ApplicationDto {
-        // let result = {};
-        // this.fieldsConfig.forEach((item, key) => result[key] = item.value);
-
-        // return DutyKindDto.create(result);
-        return null
     }
 
     initForm(): Object {
