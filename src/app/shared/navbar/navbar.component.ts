@@ -14,6 +14,7 @@ export class NavbarComponent {
     if (navbarBurgers.length > 0) {
       navbarBurgers.forEach( element => {
         element.addEventListener('click', () => {
+          debugger
           const target = element.dataset.target;
           const $target = document.getElementById(target);
           element.classList.toggle('is-active');

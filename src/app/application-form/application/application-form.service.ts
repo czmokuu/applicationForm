@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 import { requiredValidator, emailValidator, ValidatorsConfigurable } from "../validators/validators";
 import { ApplicationDto } from "./application-dto";
 import { CustomValidator } from "../form-configuration/validators";
+import { ApplicationFormDto } from "../application-form-dto";
 
 @Injectable()
 export class CreateApplicationForm extends FormConfig {
@@ -18,7 +19,7 @@ export class CreateApplicationForm extends FormConfig {
         this.fieldsConfig.set('name', new FieldConfig('', 'name', '', false, [requiredValidator], "Name"));
         this.fieldsConfig.set('surname', new FieldConfig('', 'surname', '', false, [requiredValidator], "Surname"));
         this.fieldsConfig.set('email', new FieldConfig('', 'email', '', false, [requiredValidator, emailValidator], "e-mail"));
-        this.fieldsConfig.set('sex', new FieldConfig('', 'sex', '', false, [], "sex"));
+        this.fieldsConfig.set('sex', new FieldConfig('', 'sex', 'male', false, [], "sex"));
         this.fieldsConfig.set('dateOfBirth', new FieldConfig('', 'dateOfBirth', '', false, [requiredValidator], "Date of birth"));
 
         this.fieldsConfig.set('country', new FieldConfig('', 'country', '', false, [requiredValidator], "Country"));
@@ -49,13 +50,18 @@ export class CreateApplicationForm extends FormConfig {
         }
     }
 
+    createApplicationFormDto(): ApplicationFormDto {
+        let result = {};
+        this.fieldsConfig.forEach((item, key) => result[key] = item.value);
+        return ApplicationFormDto.create(result);
+    }
+
     getErrorMessage(field: FieldConfig) {
         let messages = field.validations.filter((validator) => this.constructErrorMessage(validator, field.name));
         return messages[0] ? messages[0].message : "";
     }
 
-    constructErrorMessage(validator: CustomValidator, filedName: string, ) {
-        debugger
+    private constructErrorMessage(validator: CustomValidator, filedName: string, ) {
         return this.ifShowErrors(filedName, validator) ? validator.message : '';
     }
 

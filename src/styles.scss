@@ -11,6 +11,7 @@ $navbar-item-color:white;
 
 @import "../node_modules/bulma/bulma.sass";
 
+
 *{
     padding: 0pt;
     margin: 0pt;
@@ -83,3 +84,18 @@ strong{
 .mydp .invaliddate {
     background-color: white!important;
 }
+  
+.btn-primary {
+    background-color: #005c9d;
+    color:white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    border-radius: 0px;
+    border:0px;
+    height: 42px;
+  }
+.button[disabled] {
+    background: #005c9d;
+}
+  

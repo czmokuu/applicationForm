@@ -11,6 +11,8 @@ import { RadiobuttonsComponent } from './components/radiobuttons/radiobuttons.co
 import { MyDatePickerModule } from 'mydatepicker';
 import { FileChooserComponent } from './components/file-chooser/file-chooser.component';
 import { TextareaComponent } from './components/textarea/textarea.component';
+import { NotificationComponent } from './notification/notification.component';
+import { NotificationService } from './notification/notification.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -26,8 +28,9 @@ import { TextareaComponent } from './components/textarea/textarea.component';
     DataPickerComponent,
     RadiobuttonsComponent,
     FileChooserComponent,
-    TextareaComponent],
-    
+    TextareaComponent,
+    NotificationComponent],
+
   exports: [NavbarComponent,
     FooterComponent,
     BanerComponent,
@@ -36,6 +39,8 @@ import { TextareaComponent } from './components/textarea/textarea.component';
     DataPickerComponent,
     FileChooserComponent,
     TextareaComponent,
-    RadiobuttonsComponent]
+    RadiobuttonsComponent,
+    NotificationComponent],
+  providers: [NotificationService]
 })
 export class SharedModule { }

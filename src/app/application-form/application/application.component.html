@@ -33,5 +33,6 @@
         <app-file-chooser [form]="createApplicationService" [name]="'portfolio'"></app-file-chooser>
       </div>
     </div>
+    <button [disabled]="createApplicationService.form.invalid" class="button btn-primary" (click)="apply()">Apply for this job</button>
   </form>
 </div>

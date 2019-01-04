@@ -1,0 +1,38 @@
+.note {
+  position: fixed;
+  z-index: 101;
+  font-size: 21px;
+  top: 88px;
+  right: 50px;
+  background: #349651;
+  color: #fff;
+  width: 20%;
+  padding: 11px;
+  text-align: center;
+  line-height: 2.5;
+  overflow: hidden;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.error{
+  background:#ff000091;
+  border-color:#ff000091; 
+}
+
+@-webkit-keyframes slideDown {
+    0%, 100% { -webkit-transform: translateY(-192px); }
+    10%, 90% { -webkit-transform: translateY(0px); }
+}
+
+@-moz-keyframes slideDown {
+    0%, 100% { -moz-transform: translateY(-192px); }
+    10%, 90% { -moz-transform: translateY(0px); }
+}
+
+.note {
+  -webkit-transform: translateY(-192px);
+  -webkit-animation: slideDown 5.5s 0.0s 1 ease forwards;
+  -moz-transform: translateY(-92px);
+  -moz-animation: slideDown 5.5s 0.0s 1 ease forwards;
+}

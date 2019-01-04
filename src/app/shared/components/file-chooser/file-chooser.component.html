@@ -1,14 +1,14 @@
 <form class="item-wrapper" [formGroup]="form.form">
   <div class="columns">
     <div class="column is-half validation">
-        <label>{{field.label}}</label><img src="../../../../assets/right.png" *ngIf="form.isFieldValid(name)">
-        <div class="error-message">
+        <label>{{field.label}} {{selectedFile?.name}}</label><img src="../../../../assets/right.png" *ngIf="form.isFieldValid(name)">
+        <div class="error-message custom-error-message">
             <div class="single-message">{{form.getErrorMessage(field)}}</div>
         </div>
     </div>
     <div class="upload-btn-wrapper">
-        <button class="btn">Upload</button>
-        <input type="file" (change)="fileChange($event)" [formControlName]="field.name" class="input" accept=".pdf,.doc,.docx">
+        <button class="btn-primary">Upload</button>
+        <input type="file" (change)="fileChange($event)" [formControlName]="field.name" class="input" accept="{{acceptedFormFiles}}">
     </div>
   </div>
 </form>

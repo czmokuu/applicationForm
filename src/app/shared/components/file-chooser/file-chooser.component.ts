@@ -13,6 +13,7 @@ export class FileChooserComponent implements OnInit {
   @Input() form: FormConfig;
   @Input() acceptedFormFiles: Array<string> = ['.pdf,.doc,.rtf,.txt'];
   field: FieldConfig;
+  selectedFile:File;
   ngOnInit(): void {
     this.field = this.form.getFieldConfig(this.name);
   }
@@ -21,7 +22,7 @@ export class FileChooserComponent implements OnInit {
   fileChange(event) {
     let fileList: FileList = event.target.files;
     if (fileList.length > 0) {
-      let file: File = fileList[0];
+      this.selectedFile = fileList[0];
       debugger
       // let formData:FormData = new FormData();
       // formData.append('uploadFile', file, file.name);
