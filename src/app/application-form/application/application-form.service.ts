@@ -73,19 +73,11 @@ export class CreateApplicationForm extends FormConfig {
         return this.form.get(field.name).hasError(validation.name) && this.form.get(field.name).touched
     }
 
-    allDayChange(isAllDay: boolean) {
-        let field = this.form.get('to');
-        let fieldConfig = this.getFieldConfig('to');
-        isAllDay ? field.setValidators([]) : field.setValidators(fieldConfig.validators);
-        field.updateValueAndValidity();
-        fieldConfig.disabled = isAllDay;
-    }
-
     initForm(): Object {
         let formFields = {};
         let keys = Array.from(this.fieldsConfig.keys());
         keys.forEach(key => formFields[key] = ['', this.fieldsConfig.get(key).validators]);
-        return formFields
+        return formFields;
     }
 
 }
